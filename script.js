@@ -123,7 +123,14 @@ function startGame() {
 function endGame() {
   gameRunning = false;
   if (currentMole) currentMole.style.display = "none";
-  gameMessage.textContent = `Game Over! Final Score: ${score}`;
+
+  // Display message based on score
+  if (score <= 0) {
+    gameMessage.textContent = "Jinbe ran away 👎🏻";
+  } else {
+    gameMessage.textContent = "You killed fat Jinbe!! 😍👍🏻";
+  }
+
   clearTimeout(gameTimeout);
 }
 
