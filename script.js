@@ -19,7 +19,7 @@ const goodMoleHitImg = "beat-Jinbe.png"; //another imgs
 const badMoleImgs = [
   "Brook.jpg",
   "Franky.jpg",
-  "luffy.jpg",
+  "Luffy.jpg",
   "sanji.jpg",
   "zoro.jpg",
 ];
