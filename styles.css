@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Bungee Tint", sans-serif;
+  text-align: center;
+  background-color: #f0f8ff;
+  cursor: url("hammer.png"), auto;
+}
+
+.game-section-container {
+  padding: 3rem;
+  background-color: #e0ffff;
+  color: #222;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vw;
+  justify-content: center;
+  margin-top: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hole {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: solid #fafad2;
+}
+
+.mole {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  display: none;
+  object-fit: contain;
+}
+
+button {
+  padding: 0.5rem 1.5rem;
+  font-size: 16px;
+  border: none;
+  background-color: #008b8b;
+  color: #fff;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+button:hover {
+  background-color: #008080;
+}
+
+.progress-bar-container {
+  width: 80%;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 100%;
+  background-color: #32cd32;
+  transition: width 1s linear;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 0.4rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+#floatingHammer {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  z-index: 9999;
+  display: none;
+  transform: translate(-50%, -50%);
+}
