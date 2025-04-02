@@ -17,10 +17,16 @@ const floatingHammer = document.getElementById("floatingHammer");
 const goodMoleImg = "jinbe.jpg"; // basic mole-jinbe img
 const goodMoleHitImg = "beat-Jinbe.png"; //another imgs
 const badMoleImgs = [
+  "Ace.jpg" ,
   "Brook.jpg",
+  "Chopper.jpg" , 
   "Franky.jpg",
   "Luffy.jpg",
+  "Nami.jpg" ,
+  "Robin.jpg" ,
+  "Sabo.jpg" ,
   "sanji.jpg",
+  "Usopp.jpg" ,
   "zoro.jpg",
 ];
 
@@ -73,7 +79,7 @@ function showMole() {
     mole.onclick = () => {
       if (!gameRunning) return;
 
-      score--;
+      score = score-5;
       scoreDisplay.textContent = score;
       mole.style.display = "none";
     };
@@ -109,8 +115,8 @@ function startGame() {
     progressBar.style.width = `${(timeLeft / 30) * 100}%`; // progress bar
 
     // adjust speed
-    if (timeLeft === 20) speed = 1200;
-    if (timeLeft === 10) speed = 1000;
+    if (timeLeft === 20) speed = 800;
+    if (timeLeft === 10) speed = 600;
 
     showMole();
     gameTimeout = setTimeout(runLoop, speed);
@@ -129,6 +135,7 @@ function endGame() {
     gameMessage.textContent = "Jinbe ran away 👎🏻";
   } else {
     gameMessage.textContent = "You killed fat Jinbe!! 😍👍🏻";
+    document.getElementById("winSound").play();
   }
 
   clearTimeout(gameTimeout);
